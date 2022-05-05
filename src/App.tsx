@@ -40,6 +40,7 @@ import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
 import { isInAppBrowser } from './lib/browser'
+import bot from './lib/bot'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -48,6 +49,7 @@ function App() {
 
   const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
     useAlert()
+  const [isBotted, setIsBotted] = useState(false)
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
@@ -187,6 +189,12 @@ function App() {
     )
   }
 
+  const onBot = () => {
+    if ( !isGameWon ) {
+      setCurrentGuess(bot.getGuess())
+    }
+  }
+
   const onEnter = () => {
     if (isGameWon || isGameLost) {
       return
@@ -271,6 +279,7 @@ function App() {
           onChar={onChar}
           onDelete={onDelete}
           onEnter={onEnter}
+          onBot={onBot}
           solution={solution}
           guesses={guesses}
           isRevealing={isRevealing}

@@ -8,6 +8,7 @@ type Props = {
   onChar: (value: string) => void
   onDelete: () => void
   onEnter: () => void
+  onBot: () => void
   solution: string
   guesses: string[]
   isRevealing?: boolean
@@ -17,6 +18,7 @@ export const Keyboard = ({
   onChar,
   onDelete,
   onEnter,
+  onBot,
   solution,
   guesses,
   isRevealing,
@@ -28,6 +30,8 @@ export const Keyboard = ({
       onEnter()
     } else if (value === 'DELETE') {
       onDelete()
+    } else if (value === "BOT") {
+      onBot()
     } else {
       onChar(value)
     }
