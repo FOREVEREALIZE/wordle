@@ -1,7 +1,7 @@
 import { getStatuses } from '../../lib/statuses'
 import { Key } from './Key'
 import { useEffect } from 'react'
-import { ENTER_TEXT, DELETE_TEXT } from '../../constants/strings'
+import { ENTER_TEXT, DELETE_TEXT, BOT_TEXT } from '../../constants/strings'
 import { localeAwareUpperCase } from '../../lib/words'
 
 type Props = {
@@ -76,6 +76,9 @@ export const Keyboard = ({
             isRevealing={isRevealing}
           />
         ))}
+        <Key width={65.4} value="BOT" onClick={onClick}>
+          {BOT_TEXT}
+        </Key>
       </div>
       <div className="flex justify-center">
         <Key width={65.4} value="ENTER" onClick={onClick}>
