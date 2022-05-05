@@ -191,7 +191,7 @@ function App() {
 
   const onBot = () => {
     if ( !isGameWon ) {
-      setCurrentGuess(bot.getGuess())
+      setCurrentGuess(bot.getGuess(new RegExp('.*')))
     }
   }
 
