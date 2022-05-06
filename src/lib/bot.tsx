@@ -10,6 +10,7 @@ function getGuess(guesses: string[]) {
     for (const word in WORDS) {
         if (!findFirstUnusedReveal(word, guesses)) {
             validWords.push(word)
+            console.log(word + ' is a valid word!')
         }
     }
     return(validWords[getRandomInt(validWords.length)].toUpperCase())
