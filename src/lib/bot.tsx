@@ -6,10 +6,10 @@ function getRandomInt(max: number) {
 }
 
 function getGuess(guesses: string[]) {
-    return(getValidWords()[getRandomInt(validWords.length)].toUpperCase())
+    return(getValidWords(guesses)[getRandomInt(validWords.length)].toUpperCase())
 }
 
-function getValidWords(word: string, guesses: string[]): string[] {
+function getValidWords(guesses: string[]): string[] {
     var validWords: string[] = [];
     for (const word in WORDS) {
         if (!findFirstUnusedReveal(word, guesses)) {
