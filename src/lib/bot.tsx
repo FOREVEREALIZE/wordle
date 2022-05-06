@@ -1,6 +1,6 @@
 import { WORDS } from '../constants/wordlist'
 
-function getRandomInt(max) {
+function getRandomInt(max: Integer) {
     return Math.floor(Math.random() * max);
 }
 
