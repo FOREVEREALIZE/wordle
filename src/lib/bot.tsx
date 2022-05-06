@@ -6,14 +6,17 @@ function getRandomInt(max: number) {
 }
 
 function getGuess(guesses: string[]) {
-    var validWords: String[] = [];
+    return(validWords[getRandomInt(validWords.length)].toUpperCase())
+}
+
+function getValidWords(word: string, guesses: string[]): string[] {
+    var validWords: string[] = [];
     for (const word in WORDS) {
         if (!findFirstUnusedReveal(word, guesses)) {
             validWords.push(word)
-            console.log(word + ' is a valid word!')
         }
     }
-    return(validWords[getRandomInt(validWords.length)].toUpperCase())
+    return validWords;
 }
 
 export default {
