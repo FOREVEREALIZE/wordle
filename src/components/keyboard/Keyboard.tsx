@@ -30,7 +30,7 @@ export const Keyboard = ({
       onEnter()
     } else if (value === 'DELETE') {
       onDelete()
-    } else if (value === "BOT") {
+    } else if (value === 'BOT') {
       onBot()
     } else {
       onChar(value)
