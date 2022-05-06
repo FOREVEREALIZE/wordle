@@ -6,7 +6,8 @@ function getRandomInt(max: number) {
 }
 
 function getGuess(guesses: string[]) {
-    return(getValidWords(guesses)[getRandomInt(validWords.length)].toUpperCase())
+    const valid = getValidWords(guesses)
+    return(valid[getRandomInt(valid.length)].toUpperCase())
 }
 
 function getValidWords(guesses: string[]): string[] {
