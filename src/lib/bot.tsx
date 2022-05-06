@@ -8,7 +8,7 @@ function getRandomInt(max: number) {
 function getGuess(guesses: String[]) {
     var validWords: String[] = [];
     for (const word in WORDS) {
-        if (!findFirstUnusedReveal(word)) {
+        if (!findFirstUnusedReveal(word, guesses)) {
             validWords.append(word)
         }
     }
