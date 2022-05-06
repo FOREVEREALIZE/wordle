@@ -6,7 +6,7 @@ function getRandomInt(max: number) {
 
 function getGuess(pattern: RegExp) {
     const validWords = WORDS.filter((word) => word.match(pattern))
-    return(validWords[getRandomInt(validWords.length)])
+    return(validWords[getRandomInt(validWords.length)].toUpperCase())
 }
 
 export default {
