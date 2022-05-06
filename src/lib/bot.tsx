@@ -1,11 +1,17 @@
 import { WORDS } from '../constants/wordlist'
+import { findFirstUnusedReveal } from './words'
 
 function getRandomInt(max: number) {
     return Math.floor(Math.random() * max);
 }
 
-function getGuess(pattern: RegExp) {
-    const validWords = WORDS.filter((word) => word.match(pattern))
+function getGuess(guesses: String[]) {
+    var validWords = [];
+    for (word in WORDS) {
+        if (!findFirstUnusedReveal(word)) {
+            validWords.append(word)
+        }
+    }
     return(validWords[getRandomInt(validWords.length)].toUpperCase())
 }
 
