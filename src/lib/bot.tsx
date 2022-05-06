@@ -9,7 +9,7 @@ function getGuess(guesses: string[]) {
     var validWords: String[] = [];
     for (const word in WORDS) {
         if (!findFirstUnusedReveal(word, guesses)) {
-            validWords.append(word)
+            validWords.push(word)
         }
     }
     return(validWords[getRandomInt(validWords.length)].toUpperCase())
